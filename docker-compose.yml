@@ -1,0 +1,19 @@
+version: "3"
+services:
+  rabbitmq:
+    container_name: rabbitymq-test-1
+    image: "rabbitmq:3"
+    ports:
+      - "4369:4369"
+      - "5671:5671"
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: 'root'
+      RABBITMQ_DEFAULT_PASS: 'root'
+  camunda:
+    container_name: camunda-test-1
+    image: "camunda/camunda-bpm-platform:latest"
+    ports:
+      - "8080:8080"
+
